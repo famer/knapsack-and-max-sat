@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1343\cocoasubrtf140
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 HW2 report completion date: 3.11.14\
+\
+The Knapsack problem is one of the NP-hard problems. This homework is targeted to 0/1 knapsack problem, which is one of the variants of the common problem statement.\
+\
+The goal is to select a subset of given set of items and try to maximize total cost of selected items having limitation of knapsack maximum possible weight to keep.\
+\
+In home work to approaches of problem solving are used: \
+\
+Branch and Bound:\
+Similar to Brute force method but space is shrieked by upper bound based on best cost \
+\
+Dynamic Programming:\
+Based on decomposition of problem to smaller ones. So bigger sets use previous calculations of smaller steps. So it requires memory to store result of calculations.\
+\
+FPTAS:\
+Based on Dynamic programming method, decomposition by cost. For decomposition used coefficient \
+coefficient = error*max_cost / instance_size. Using this coefficient categories of cost made by rounding cost of item divided by previously got coefficient.\
+\
+\
+\
+Experiments are performed on sets of 50 instances of one size. Thus, the average runtime and average relative error are computed.\
+Instance sizes used are: 4, 10, 15, 20, 22(for b&b and dynamic), 40(for FPTAS).\
+\
+Average runtime:\
+^ Algorithm\\Items count ^ 4                  ^ 10                 ^ 15                 ^ 20                 ^ 22                  ^\
+^ Branch and Bound           | 
+\f1\fs22 \CocoaLigature0 0.00005236 
+\f0\fs24 \CocoaLigature1 | 0.0029954 | 0.0867261 | 3.48811216 | 16.41639522 |\
+^ Dynamic programming            | 0.00019884 | 0.00125704 | 0.004264 | 0.00876396 | 0.01035102 |\
+\
+\
+\{\{:en:student:tatartim:bnb.png|\}\}\
+\{\{:en:student:tatartim:dynamic.png|\}\}\
+              \
+              \
+\
+Relative errors and runtime(for 40 instance size):\
+^ Precision             ^ .1          ^ .3         ^ .4         ^ .5         ^ .6         ^\
+^ Runtime | 1.21546326 | 0.29003328 | 0.20054382 | 0.15674454 | 0.12784316 |\
+^ Average relative error | 0 | 0.00002372 | 0.00003847 | 0.00004692 | 0.00009834 |\
+^ Maximum relative error | 0 | 0.00051493 | 0.00055294 | 0.00064378 | 0.00091617 |\
+\
+Conclusion:\
+Branch and bound method is apparently doing better than brute force especially on larger instance sizes but still relatively slow. Dynamic programming is taking advantage of previous calculations and consequently requires memory to store it. So it\'92s dramatically improves speed, but requires more and more memory for larger instance sizes. FPTAS based on dynamic programming. It makes calculations faster but introduces error which can be adjusted. So it\'92s performing trade off between speed and calculation quality. On small precision error is close to 0. \
+\
+Source code: \
+\{\{:en:student:tatartim:hw1.py.zip|\}\}\
+}

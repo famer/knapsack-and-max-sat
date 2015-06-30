@@ -1,0 +1,52 @@
+HW 4
+Completed on 08.12.2014.
+
+===== Descriptions of the algorithm  =====
+Simulated Annealing is used as advanced iterative algorithm to solve the
+Knapsack 1/0 problem.
+
+Simulated annealing is a combination of random
+walk and first improvement algorithms with some division of work between them.
+Move is considered from both random walk and first improvement. If move decreases cost it's definitely accepted. If not -- accepted with some probability. This combination of approaches allows the algorithm both to converge to global minimum and to escape from local minimum.
+
+SA defines the notion of "temperature" which connected with
+threshold of acceptance moves to worse solutions. Temperature is a real
+number that is set to some starting value and decreased after each iteration of
+algorithm. The acceptance criterion of solution is a predicate which depends
+on current temperature and how bad solution is.
+
+Other important parameters are the number of moves per one value
+of temperature and number of decrements of temperature.
+
+Current implementation of SA uses following values of parameters:
+  - Initial temperature (t0) -- set by user, default 10.
+  - Multiplier of temperature -- set by user, default 0.99.
+  - Initial state -- random.
+  - Number of iterations is limited by the lower temperature which is calculated
+    as |log_{10}alpha|/10.
+  - Number of moves per one value of temperature -- N.
+  - Acceptance function: random() < exp(-abs(delta_cost)/t). (random is between [0, 1))
+    
+
+Instances are from 40 given file.
+
+Results
+
+^ t0 ^ alpha ^ Runtime    ^ Avg relative error ^ Maximum relative error ^
+| 1  | 0.9   | 0.0535000000000000 | 0.13847741             | 0.28629781             |
+| 1  | 0.99  | 0.6945999999999997 | 0.09661901             | 0.23797139             |
+| 1  | 0.999 | 8.5947999999999995 | 0.06809280             | 0.21131083             |
+| 10 | 0.9   | 0.0502000000000000 | 0.16097842             | 0.38525511             |
+| 10 | 0.99  | 0.6799999999999999 | 0.10049181             | 0.21657168             |
+| 10 | 0.999 | 8.7700000000000024 | 0.06286008             | 0.18094615             |
+
+Algorithm shows quite good power with given parameters as far as several runs gives almost the same results.
+
+Effectiveness of SA algorithm depends on given parameters quite much as far as input data influence it’s behavior. Depending on the bad choice of parameters and inconvenient set of data algorithm can stack in local minimum and provide bad result.
+
+
+Remembering of best solution guarantees more stable behaviour of algorithm
+between runs.
+
+Sources code
+

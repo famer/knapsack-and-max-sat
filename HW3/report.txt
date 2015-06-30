@@ -1,0 +1,80 @@
+HW 3
+Done 23.11.2014.
+
+
+Used algorithms
+  - Brute force
+  - Branch & Bound
+  - Dynamic programming
+  - Cost/Weights heuristic
+
+
+Each group has one parameter varying, others are fixed.
+
+Default set:
+
+^ Name                    ^ Value ^
+| Number of Items         | 15    |
+| Number of Instances     | 50    |
+| Capacity/Summary Weight | 0.8   |
+| Maximum item weight     | 100   |
+| Maximum item cost       | 100   |
+| k                       | 1.0   |
+| Balance                 | 0     |
+
+
+
+Number of Items         5, 10, 15, 20
+
+{{https://edux.fit.cvut.cz/courses/MI-PAA/_media/en/student/tatartim/Items_count.png}}
+As expected, bruteforce and BB have exponential grows, and BB rises a bit slower than bruteforce. Dynamic and Heuristic goes logarithmically. But it's faster then other algorithms because of principle of work.
+
+
+Maximum item cost       50, 100, 150, 200
+
+{{https://edux.fit.cvut.cz/courses/MI-PAA/_media/en/student/tatartim/Maximum_item_cost.png}} 
+As seen lgorithms don’t depend much on this parameter.
+
+
+Maximum item weight     50, 100, 150, 200
+
+{{https://edux.fit.cvut.cz/courses/MI-PAA/_media/en/student/tatartim/Maximum_item_weight.png}} 
+All but Dynamic are steady as expected. Dynamic algorithms graph rises logarithmically because of it’s decomposition by weight.
+
+
+Capacity/Summary Weight 0.2, 0.4, 0.6, 0.8 
+
+{{https://edux.fit.cvut.cz/courses/MI-PAA/_media/en/student/tatartim/Capacity-Summary_Weight.png}} 
+Branch and Bound algorithm’s graph goes down because with increase of capacity heavier items goest first and knapsack fills faster. Dynamic algorithms graph rises logarithmically because of it’s decomposition by weight as in previous case. Heuristics rises a bit probably because increasing number of items to calculate ratio and analyze with increase of capacity.
+
+
+Varying granularity.
+k                       0.6, 0.8, 1.0, 1.2
+
+{{https://edux.fit.cvut.cz/courses/MI-PAA/_media/en/student/tatartim/Granularity.png}}
+Graphs are steady.
+
+
+
+Relative errors for heuristic algorithm:
+^ Item count ^ 5 ^ 10 ^ 15 ^ 20 ^
+^ Average relative error | 0.08632851 | 0.15338452 | 0.13858974 | 0.14525848 |
+^ Maximum relative error | 0.54329635 | 0.37531573 | 0.39842525 | 0.33273071 |
+
+^ Maximum item cost ^ 50 ^ 100 ^ 150 ^ 200 ^
+^ Average relative error | 0.11601882 | 0.13925114 | 0.13127083 | 0.14382722 |
+^ Maximum relative error | 0.29394044 | 0.45563285 | 0.34235964 | 0.33430835 |
+
+^ Maximum item weight ^ 50 ^ 100 ^ 150 ^ 200 ^
+^ Average relative error | 0.17136396 | 0.16774648 | 0.15023044 | 0.14562715 |
+^ Maximum relative error | 0.43173511 | 0.40157533 | 0.37056056 | 0.34025334 |
+
+^ Capacity / Summary Weight ratio ^ 0.2 ^ 0.4 ^ 0.6 ^ 0.8 ^
+^ Average relative error | 0.37034145 | 0.33322425 | 0.26812633 | 0.14553225 |
+^ Maximum relative error | 0.83246165 | 0.76876793 | 0.56940472 | 0.32625504 |
+
+^ Granularity ^ 0.6 ^ 0.8 ^ 1.0 ^ 1.2 ^
+^ Average relative error | 0.12652793 | 0.13404244 | 0.13583478 | 0.15016780 |
+^ Maximum relative error | 0.33267361 | 0.38393357 | 0.43227164 | 0.34356145 |
+
+

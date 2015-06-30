@@ -1,0 +1,29 @@
+HW 4
+Completed on 08.12.2014.
+
+Аlgorithm
+Simulated Annealing.
+This algorithm uses advantage of random walk and first improvement. It accepts solution or accepts it’s with probability. Depends on do we increase solution based on temperature. It helps to escape of to be stacked in local solution. Temperature is actually amount of «error» to be accepted to perform solution. Temperature supposed to be decreased after each step. If temperature is low we are getting simple greedy algorithms. If it’s high — it is random walk.
+
+
+Other important parameters are the number of moves per one value
+of temperature and number of decrements of temperature.
+
+Used parameters parameters are: initial temperature, temperature mult(a), number of steps per one value of t — N, acceptance function.
+    
+
+Instances are from 40 given file.
+
+Results
+
+t = 1, a = 0.9 
+runtime: 0.049417480000000, avgrelativeerror:  0.22929855, maxrelativeerror: 0.37701243
+t = 11, a = .9
+runtime: 0.070153420000000, avgrelativeerror: 0.15800327, maxrelativeerror: 0.35197226
+Algorithm shows quite good results with found parameters as far as several runs gives pretty the same results.
+
+Effectiveness of SA algorithm depends on given parameters quite much as far as input data influence it’s behavior as well.
+
+
+Sources code
+

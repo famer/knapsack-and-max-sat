@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 HW1 report\
+\
+The Knapsack problem is one of the NP-hard problems. This homework is targeted to 0/1 knapsack problem, which is one of the variants of the common problem statement.\
+\
+The goal is to select a subset of given set of items and try to maximize total cost of selected items having limitation of knapsack maximum possible weight to keep.\
+\
+In home work to approaches of problem solving are used: brute force and heuristic based on maximization of sum of cost/weight ratios of each item.\
+\
+Experiments are performed on sets of 50 instances of one size. Thus, the average runtime and average relative error are computed.\
+Instance sizes used are: 4, 10, 15, 20, 22.\
+\
+Average runtime:\
+^ Algorithm\\Item count ^ 4                  ^ 10                 ^ 15                 ^ 20                 ^ 22                  ^\
+^ Bruteforce           | 3,71E-05 | 0,00394796 | 0,18359696 | 7,28888168 | 31,42012958 |\
+^ Heuristic            | 6,14E-06 | 9,74E-06 | 1,97E-05 | 2,43E-05 | 2,31E-05 |\
+\
+\{\{:en:student:tatartim:bruteforce.png|\}\}\
+\{\{:en:student:tatartim:heuristic.png|\}\}\
+              \
+              \
+\
+Relative errors:\
+^ Item count             ^ 4          ^ 10         ^ 15         ^ 20         ^ 22         ^\
+^ Average relative error | 0,071941404 | 0,030864208 | 0,009673343 | 0,013912328 | 0,015664114 |\
+^ Maximum relative error | 0,683673469 | 0,157534247 | 0,085427136 | 0,084337349 | 0,087524752 |\
+\
+Conclusion:\
+Brute force method time growing exponentially as expected and not suitable for big sets of data. Heuristic growth is more smooth and runtime for 20 is more than for 22 instance size which possibly connected with some not systematical error or load occurred for 20 instance size. \
+\
+Source code: \
+\{\{:en:student:tatartim:hw1.py.zip|\}\}\
+}
